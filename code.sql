@@ -6,10 +6,10 @@ begin
 	declare @RowCount int = (select count(*) from syn.SA_CustomerSeasonal)
 	declare @ErrorMessage varchar(max)
 
--- Проверка на корректность загрузки
+-- Проверка на корректность загрузки -- Отступ комментария (tab)
 	if not exists (
 	select 1
-	from syn.ImportFile as f
+	from syn.ImportFile as f -- Название алиаса (imf)
 	where f.ID = @ID_Record
 		and f.FlagLoaded = cast(1 as bit)
 	)
